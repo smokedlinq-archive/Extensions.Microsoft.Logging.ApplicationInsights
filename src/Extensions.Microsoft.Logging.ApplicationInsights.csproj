@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Nullable>Enable</Nullable>
+    <Description>This package adds support for logging to both Application Insights and Microsoft.Extensions.Logging from a common interface.</Description>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <VersionPrefix Condition=" '$(VersionPrefix)'=='' ">0.0.0</VersionPrefix>
+    <VersionSuffix Condition=" '$(VersionSuffix)'=='' ">dev</VersionSuffix>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Version)' != ''">
+    <IsPackable>true</IsPackable>
+    <DebugType>Portable</DebugType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <VersionPrefix>$(Version)</VersionPrefix>
+    <FileVersion>$(Version)</FileVersion>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <Authors>https://github.com/smokedlinq/Extensions.Microsoft.Logging.ApplicationInsights</Authors>
+    <Company>https://github.com/smokedlinq/EExtensions.Microsoft.Logging.ApplicationInsights</Company>
+    <PackageProjectUrl>https://github.com/smokedlinq/Extensions.Microsoft.Logging.ApplicationInsights</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/smokedlinq/Extensions.Microsoft.Logging.ApplicationInsights.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights" Version="2.15.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.9" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>

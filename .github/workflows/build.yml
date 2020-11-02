@@ -1,9 +1,14 @@
 name: Build
+
 on:
   push:
     branches: [ master ]
   pull_request:
     types: [opened, synchronize, reopened]
+    
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 
 jobs:
   build:
@@ -60,7 +65,7 @@ jobs:
       shell: pwsh
       run: |
         dotnet test --configuration Release --logger 'console;verbosity=detailed' /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-        .\.sonar\scanner\dotnet-sonarscanner begin /k:'smokedlinq_Extensions.Microsoft.Logging.ApplicationInsights' /o:'smokedlinq-github' /d:sonar.login='${{ secrets.SONAR_TOKEN }}' /d:sonar.host.url='https://sonarcloud.io' /d:sonar.cs.opencover.reportsPaths=tests/coverage.opencover.xml
+        .\.sonar\scanner\dotnet-sonarscanner begin /k:'smokedlinq_Extensions.Microsoft.Logging.ApplicationInsights' /o:'smokedlinq-github' /d:sonar.login='${{ secrets.SONAR_TOKEN }}' /d:sonar.host.url='https://sonarcloud.io' /d:sonar.cs.opencover.reportsPaths=**/coverage.opencover.xml
         dotnet build --configuration Release --no-incremental
         .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login='${{ secrets.SONAR_TOKEN }}'
 

@@ -1,4 +1,6 @@
-﻿using System.Runtime.CompilerServices;
+﻿using Extensions.Microsoft.Logging.ApplicationInsights;
+using Microsoft.Extensions.Logging;
+using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Extensions.Microsoft.Logging.ApplicationInsights.Tests")]
 

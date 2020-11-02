@@ -1,7 +1,7 @@
 ﻿using Microsoft.ApplicationInsights;
 using Microsoft.Extensions.Logging;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Extensions.Microsoft.Logging.ApplicationInsights
 {
     internal class LoggerTelemetryFactory : ILoggerTelemetryFactory
     {

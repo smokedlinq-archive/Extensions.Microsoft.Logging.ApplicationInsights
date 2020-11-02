@@ -3,6 +3,7 @@ using AutoFixture;
 using FluentAssertions;
 using Microsoft.ApplicationInsights;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System;
 using Xunit;
 

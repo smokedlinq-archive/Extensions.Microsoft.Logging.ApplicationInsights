@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Extensions.DependencyInjection
+﻿namespace Microsoft.Extensions.Logging
 {
     public interface ILoggerTelemetryFactory
     {

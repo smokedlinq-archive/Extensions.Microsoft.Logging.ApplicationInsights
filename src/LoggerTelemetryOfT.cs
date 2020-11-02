@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Extensions.Microsoft.Logging.ApplicationInsights
 {
     internal class LoggerTelemetry<T> : LoggerTelemetry, ILoggerTelemetry<T>
     {

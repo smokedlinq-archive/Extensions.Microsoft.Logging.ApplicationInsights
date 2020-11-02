@@ -1,9 +1,8 @@
 ﻿using Microsoft.ApplicationInsights.DataContracts;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Microsoft.Extensions.Logging
 {
     public interface ILoggerTelemetry : ILogger
     {

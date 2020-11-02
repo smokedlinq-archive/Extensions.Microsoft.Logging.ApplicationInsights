@@ -2,7 +2,6 @@
 using AutoFixture;
 using FluentAssertions;
 using Microsoft.ApplicationInsights;
-using Microsoft.ApplicationInsights.Extensibility;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using Xunit;
@@ -37,15 +36,9 @@ namespace Extensions.Microsoft.Logging.ApplicationInsights.Tests
             public IServiceProvider Customize(IFixture fixture)
             {
                 var services = new ServiceCollection();
-                var configuration = TelemetryConfiguration.CreateDefault();
-
-                configuration.DisableTelemetry = true;
-
                 services.AddLogging();
-                services.AddSingleton(configuration);
-                services.AddTransient<TelemetryClient>();
+                services.AddTransient(_ => fixture.Create<TelemetryClient>());
                 services.AddLoggerTelemetry();
-
                 return services.BuildServiceProvider();
             }
         }

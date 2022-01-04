@@ -12,7 +12,7 @@ This package adds support for logging to both Application Insights and Microsoft
 First, configure dependency injection to include the `ILoggerTelemetry<T>` and `ILoggerTelemetryFactory` interfaces.
 
 ```csharp
-public void ConfigureServices(IServiceCollection serivces)
+public void ConfigureServices(IServiceCollection services)
 {
     // Add logging and Application Insights if your platform does not
     // services.AddLogging();
